@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clarity AI</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="brand-wrap">
+          <div class="brand-mark">C</div>
+          <div>
+            <p class="eyebrow">Writing assistant</p>
+            <h1>Clarity AI</h1>
+          </div>
+        </div>
+        <button class="ghost-button" type="button">Try demo</button>
+      </header>
+
+      <main class="layout">
+        <section class="panel input-panel">
+          <div class="panel-header">
+            <span class="badge">Draft</span>
+            <span class="muted">Keep your meaning, sharpen the message</span>
+          </div>
+
+          <label class="sr-only" for="text-input">Your writing</label>
+          <textarea id="text-input" placeholder="Paste a paragraph to improve clarity, tone, and readability..."></textarea>
+
+          <div class="controls">
+            <select id="tone-select" aria-label="Tone selector">
+              <option value="clear">Clear and direct</option>
+              <option value="professional">Professional</option>
+              <option value="friendly">Friendly</option>
+              <option value="confident">Confident</option>
+            </select>
+            <button id="rewrite-btn" class="primary-button" type="button">Improve text</button>
+          </div>
+        </section>
+
+        <section class="panel output-panel">
+          <div class="panel-header">
+            <span class="badge success">Result</span>
+            <span class="muted">Refined version</span>
+          </div>
+
+          <div id="output" class="output-box empty">
+            Your improved version will appear here.
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./js/app.js"></script>
+  </body>
+</html>

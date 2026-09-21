@@ -3,10 +3,12 @@ const toneSelect = document.getElementById('tone-select');
 const rewriteButton = document.getElementById('rewrite-btn');
 const output = document.getElementById('output');
 
+const API_URL = 'https://YOUR-BACKEND-NAME.onrender.com';
+
 async function rewriteWithAI(text) {
   try {
     const response = await fetch(
-      'http://127.0.0.1:8000/api/rewrite',
+      `${API_URL}/api/rewrite`,
       {
         method: 'POST',
         headers: {
@@ -22,15 +24,13 @@ async function rewriteWithAI(text) {
       throw new Error('API request failed');
     }
 
-    const data = await response.json();
-
-    return data;
+    return await response.json();
   } catch (error) {
     console.error(error);
 
     return {
       success: false,
-      error: 'Unable to connect to backend'
+      error: 'Unable to connect to Clarity AI server'
     };
   }
 }
